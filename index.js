@@ -1,14 +1,24 @@
+"use strict";
+
 function getComputerChoice() {
     let randNum = Math.floor(Math.random() * 3) + 1;
 
     if (randNum === 1) {
-        return "Rock";
+        return "rock";
     }
     if (randNum === 2) {
-        return "Paper";
+        return "paper";
     }
 
-    return "Scissors";
+    return "scissors";
 }
 
-console.log(getComputerChoice());
+function getPlayerChoice() {
+    let playerChoice = prompt("Rock, Paper, Scissors? (Enter your choice):", "");
+
+    playerChoice = playerChoice.toLowerCase();
+
+    return playerChoice;
+}
+
+// console.log(getPlayerChoice());
