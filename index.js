@@ -21,7 +21,7 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
-function playSingleRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     console.log(`Player selection: ${playerSelection}`)
     console.log(`Computer selection: ${computerSelection}`)
 
@@ -47,7 +47,11 @@ function playSingleRound(playerSelection, computerSelection) {
     return "Draw! Nice Game";
 }
 
-let playerSelection = getPlayerChoice();
-let computerSelection = getComputerChoice();
-
-console.log(playSingleRound(playerSelection, computerSelection));
+function checkWhoWon(gameResult) {
+    if (gameResult.substring(4, 5) === "W") {
+        return "player";
+    }
+    else if (gameResult.substring(4, 5) === "L") {
+        return "computer";
+    }
+}
