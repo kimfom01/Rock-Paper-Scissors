@@ -21,4 +21,33 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
-// console.log(getPlayerChoice());
+function playSingleRound(playerSelection, computerSelection) {
+    console.log(`Player selection: ${playerSelection}`)
+    console.log(`Computer selection: ${computerSelection}`)
+
+    if (playerSelection === "rock" && computerSelection === "scissors") {
+        return "You Win! Rock beats Scissors";
+    }
+    if (playerSelection === "paper" && computerSelection === "rock") {
+        return "You Win! Paper beats Rock";
+    }
+    if (playerSelection === "scissors" && computerSelection === "paper") {
+        return "You Win! Scissors beats Paper";
+    }
+    if (playerSelection === "scissors" && computerSelection === "rock") {
+        return "You Lose! Rock beats Scissors";
+    }
+    if (playerSelection === "rock" && computerSelection === "paper") {
+        return "You Lose! Paper beats Rock";
+    }
+    if (playerSelection === "paper" && computerSelection === "scissors") {
+        return "You Lose! Scissors beats Paper";
+    }
+
+    return "Draw! Nice Game";
+}
+
+let playerSelection = getPlayerChoice();
+let computerSelection = getComputerChoice();
+
+console.log(playSingleRound(playerSelection, computerSelection));
