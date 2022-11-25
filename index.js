@@ -55,3 +55,29 @@ function checkWhoWon(gameResult) {
         return "computer";
     }
 }
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    let winner;
+
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = getPlayerChoice();
+        let computerSelection = getComputerChoice();
+
+        let result = playRound(playerSelection, computerSelection);
+        console.log(result);
+
+        winner = checkWhoWon(result);
+        if (winner === "player") {
+            ++playerScore;
+        }
+        if (winner === "computer") {
+            ++computerScore;
+        }
+    }
+
+    console.log(`Final results - Player ${playerScore}:${computerScore} Computer`)
+}
+
+// game();
