@@ -31,25 +31,25 @@ function getScore(playerSelection, computerSelection) {
     let computerScore = 0;
 
     if (playerSelection === "rock" && computerSelection === "scissors") {
-        return [++playerScore, computerScore,];
+        return [++playerScore, computerScore];
     }
     if (playerSelection === "paper" && computerSelection === "rock") {
-        return [++playerScore, computerScore,];
+        return [++playerScore, computerScore];
     }
     if (playerSelection === "scissors" && computerSelection === "paper") {
-        return [++playerScore, computerScore,];
+        return [++playerScore, computerScore];
     }
     if (playerSelection === "scissors" && computerSelection === "rock") {
-        return [playerScore, ++computerScore,];
+        return [playerScore, ++computerScore];
     }
     if (playerSelection === "rock" && computerSelection === "paper") {
-        return [playerScore, ++computerScore,];
+        return [playerScore, ++computerScore];
     }
     if (playerSelection === "paper" && computerSelection === "scissors") {
-        return [playerScore, ++computerScore,];
+        return [playerScore, ++computerScore];
     }
 
-    return [playerScore, computerScore,];
+    return [playerScore, computerScore];
 }
 
 function checkWhoWon(gameResult) {
