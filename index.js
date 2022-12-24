@@ -78,6 +78,31 @@ function playRound(e) {
     }
 
     displayWinner(winner, computerChoice);
+    endGame();
+}
+
+function endGame() {
+    const divResults = document.querySelector('.results');
+
+    if (playerScore === 5 || computerScore === 5) {
+        if (playerScore === 5 || computerScore === 5) {
+            // Display message indicating the winner
+            let message;
+            if (playerScore === 5) {
+                message = "Congratulations! You won the game!";
+            }
+            else {
+                message = "Sorry, the computer won the game.";
+            }
+
+            divResults.textContent = message;
+
+            // Disable the buttons
+            rock.disabled = true;
+            paper.disabled = true;
+            scissors.disabled = true;
+        }
+    }
 }
 
 function displayWinner(winner, computerChoice) {
