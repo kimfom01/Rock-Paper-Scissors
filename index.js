@@ -3,6 +3,8 @@
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
+const reset = document.querySelector(".reset");
+
 let playerScore = 0;
 let computerScore = 0;
 let computerChoice;
@@ -122,6 +124,22 @@ function displayWinner(winner, computerChoice) {
     scores.textContent = `Player ${playerScore}:${computerScore} Computer`
 }
 
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    const divResults = document.querySelector('.results');
+    const scores = document.querySelector('.scores');
+    const cpuChoice = document.querySelector('.cpu-choice');
+    divResults.textContent = "";
+    scores.textContent = "";
+    cpuChoice.textContent = "";
+    rock.disabled = false;
+    paper.disabled = false;
+    scissors.disabled = false;
+}
+
+
 rock.addEventListener("click", playRound);
 paper.addEventListener('click', playRound);
 scissors.addEventListener('click', playRound);
+reset.addEventListener("click", resetGame);
