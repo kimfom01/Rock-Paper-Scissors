@@ -1,0 +1,49 @@
+.center-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.rock,
+.paper,
+.scissors {
+    background-color: #e97800;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.reset {
+    margin: 10px;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.results,
+.scores,
+.cpu-choice {
+    font-size: 2em;
+    color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #3498db;
+    border-radius: 8px;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.rock,
+.paper,
+.scissors,
+.results,
+.scores,
+.cpu-choice {
+    font-family: 'Open Sans', sans-serif;
+}
