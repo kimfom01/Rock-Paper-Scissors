@@ -79,7 +79,7 @@ function playRound(e) {
         ++computerScore;
     }
 
-    displayWinner(winner, computerChoice);
+    displayOutput(playerChoice, computerChoice);
     endGame();
 }
 
@@ -87,41 +87,50 @@ function endGame() {
     const divResults = document.querySelector('.results');
 
     if (playerScore === 5 || computerScore === 5) {
-        if (playerScore === 5 || computerScore === 5) {
-            // Display message indicating the winner
-            let message;
-            if (playerScore === 5) {
-                message = "Congratulations! You won the game!";
-            }
-            else {
-                message = "Sorry, the computer won the game.";
-            }
-
-            divResults.textContent = message;
-
-            // Disable the buttons
-            rock.disabled = true;
-            paper.disabled = true;
-            scissors.disabled = true;
+        let message;
+        if (playerScore === 5) {
+            message = "Congratulations! You won the game!";
         }
+        else {
+            message = "Sorry, the computer won the game.";
+        }
+
+        divResults.textContent = message;
+        divResults.classList.add('blue-background');
+
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
     }
 }
 
-function displayWinner(winner, computerChoice) {
-    const cpuChoice = document.querySelector('.cpu-choice');
-    const divResults = document.querySelector('.results');
+function displayOutput(playerChoice, computerChoice) {
+    const player = document.querySelector('.player');
+    const cpu = document.querySelector('.cpu');
     const scores = document.querySelector('.scores')
 
-    cpuChoice.textContent = `Computer Choice: ${computerChoice}`;
+    resetChoices(player, cpu);
 
-    if (winner !== "draw") {
-        divResults.textContent = `${winner} won this round`;
-    }
-    else {
-        divResults.textContent = `${winner}`;
-    }
+    player.appendChild(assignImage(playerChoice));
+    cpu.appendChild(assignImage(computerChoice))
 
-    scores.textContent = `Player ${playerScore}:${computerScore} Computer`
+    scores.textContent = `${playerScore}:${computerScore}`
+}
+
+function assignImage(choice) {
+    const image = document.createElement('img');
+    image.src = `./images/${choice}.png`;
+    image.alt = `${choice}`;
+    image.className = 'image';
+    image.width = 200
+    image.height = 200
+
+    return image
+}
+
+function resetChoices(playerChoice, computerChoice) {
+    playerChoice.innerHTML = '';
+    computerChoice.innerHTML = '';
 }
 
 function resetGame() {
@@ -129,10 +138,15 @@ function resetGame() {
     computerScore = 0;
     const divResults = document.querySelector('.results');
     const scores = document.querySelector('.scores');
-    const cpuChoice = document.querySelector('.cpu-choice');
+    const cpuChoice = document.querySelector('.cpu');
+    const playerChoice = document.querySelector('.player');
+
     divResults.textContent = "";
+    divResults.classList.remove('blue-background');
     scores.textContent = "";
     cpuChoice.textContent = "";
+    playerChoice.textContent = "";
+
     rock.disabled = false;
     paper.disabled = false;
     scissors.disabled = false;
