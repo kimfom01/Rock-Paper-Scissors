@@ -20,9 +20,7 @@
     padding: 10px 20px;
 }
 
-.blue-background,
-.cpu,
-.player {
+.blue-background {
     font-size: 2em;
     color: #fff;
     padding: 20px;
