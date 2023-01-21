@@ -20,9 +20,9 @@
     padding: 10px 20px;
 }
 
-.results,
-.scores,
-.cpu-choice {
+.blue-background,
+.cpu,
+.player {
     font-size: 2em;
     color: #fff;
     padding: 20px;
@@ -42,8 +42,68 @@
 .rock,
 .paper,
 .scissors,
+.button-container,
 .results,
 .scores,
-.cpu-choice {
+.cpu-choice,
+.player-choice {
     font-family: 'Open Sans', sans-serif;
+    font-size: x-large;
+}
+
+.button-container {
+    margin-top: 100px;
+}
+
+.choices {
+    display: flex;
+    gap: 25px;
+}
+
+.scores {
+    display: flex;
+    align-items: end;
+    padding-bottom: 120px;
+    font-weight: 800;
+}
+
+.cpu-choice,
+.player-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 500px) {
+    .image {
+        height: 80px;
+        width: 80px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rock,
+    .paper,
+    .scissors {
+        font-size: x-small;
+    }
+
+    .center-container {
+        align-items: center;
+    }
+
+    .cpu-choice,
+    .player-choice {
+        font-size: medium;
+    }
+
+    .scores {
+        padding-bottom: 60px;
+    }
 }
